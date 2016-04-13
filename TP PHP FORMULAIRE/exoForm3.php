@@ -4,18 +4,6 @@
       <title>Formulaire</title>
     </head>
     <body>
-
-    <form method="get" action="exoForm3.php">
-     
-      <input type="text" name="operande1"/>
-      <select name="op">
-        <option value="mult">x</option>
-        <option value="add">+</option>
-        <option value="sub">-</option>
-        <option value="div">/</option>
-      </select>
-      <input type="text" name="operande2"/><br>
-      <input type="submit" name="accepter" value="Envoyer">
       
       <?php
       
@@ -35,12 +23,27 @@
                 }
              }
         }
+      ?>
+      
+    <form method="get" action="exoForm3.php">
+     
+      <input type="text" name="operande1" value="<?php
+                                  if(isset($res)) echo $res; 
+             ?>" />
+      <select name="op">
+        <option value="mult">x</option>
+        <option value="add">+</option>
+        <option value="sub">-</option>
+        <option value="div">/</option>
+      </select>
+      <input type="text" name="operande2"/><br>
+      <input type="submit" name="accepter" value="Envoyer">
+            
+    </form>
+      <?php
       if(isset($res)){
       echo $res."<br>";
       }
       ?>
-      
-    </form>
-      
     </body>
   </html>
