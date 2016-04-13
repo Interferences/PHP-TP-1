@@ -29,8 +29,11 @@
             } else if($op=="sub"){
             $res=$operande1-$operande2;
             } else if($op=="div"){
-            $res=$operande1/$operande2;
-            }
+              if($operande2==0){
+                $operande2=1;
+                  $res=$operande1/$operande2;
+                }
+             }
         }
       if(isset($res)){
       echo $res."<br>";
